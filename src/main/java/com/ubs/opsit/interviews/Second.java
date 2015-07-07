@@ -6,9 +6,9 @@ public class Second extends TimeUnit {
 	@Override
 	public String getLamps(int seconds) {
 		if (0 == seconds % 2) {
-			return "Y";
+			return Lamp.YELLOW_LIGHT.getValue();
 		}
-		return "O";
+		return Lamp.SINGLE_OFF.getValue();
 	}
 
 	@Override
