@@ -7,7 +7,7 @@ public enum Lamp {
 	YELLOW_LIGHT ("Y"),
 	RED_LIGHT ("R");
 	
-	private String value;
+	private final String value;
 	
 	private Lamp(String value) {
 		this.value = value;
