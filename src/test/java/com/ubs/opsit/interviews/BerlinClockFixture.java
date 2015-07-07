@@ -31,30 +31,8 @@ public class BerlinClockFixture {
         theTime = time;
     }
     
-    public void printBytes(String str) {
-    	try {
-    		byte[] bytes = str.getBytes("US-ASCII");
-    		for (byte bye : bytes) {
-    			System.out.print(bye + " ");
-    		}
-    		System.out.print(System.lineSeparator());
-    	} catch (UnsupportedEncodingException e) {
-    		// TODO Auto-generated catch block
-    		e.printStackTrace();
-    	}    	
-    }
-
     @Then("the clock should look like $")
     public void thenTheClockShouldLookLike(String theExpectedBerlinClockOutput) {
-    	String expected = theExpectedBerlinClockOutput;
-    	String got = berlinClock.convertTime(theTime);
-    	System.out.println("Expected : " + expected);
-    	printBytes(expected);
-    	System.out.println("Length : " + expected.length());
-    	System.out.println("Got : " + got);
-    	printBytes(got);
-    	System.out.println("Length : " + got.length());
-    	
         assertThat(berlinClock.convertTime(theTime)).isEqualTo(theExpectedBerlinClockOutput);
     }
 }
