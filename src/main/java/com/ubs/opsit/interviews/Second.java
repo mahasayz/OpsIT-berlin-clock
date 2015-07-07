@@ -1,5 +1,6 @@
 package com.ubs.opsit.interviews;
 
+
 public class Second extends TimeUnit {
 
 	@Override
@@ -13,13 +14,13 @@ public class Second extends TimeUnit {
 	@Override
 	public String getLampsForMultiplesOfFive(int unit) {
 		// TODO Auto-generated method stub
-		return null;
+		throw new UnsupportedOperationException("Seconds unit does not depend on multiples of 5 logic");
 	}
 
 	@Override
 	public String getLampsForSingleUnits(int unit) {
 		// TODO Auto-generated method stub
-		return null;
+		throw new UnsupportedOperationException("Seconds unit does not depend on single units logic");
 	}
 
 }
