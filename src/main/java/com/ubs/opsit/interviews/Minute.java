@@ -1,25 +1,13 @@
 package com.ubs.opsit.interviews;
 
-public class Minute implements TimeUnit {
+public class Minute extends TimeUnit {
 	private static final String RED_LIGHT = "R";
 	private static final String YELLOW_LIGHT = "Y";
 	private static final String ALL_FOUR_LIGHTS_OFF = "OOOO";
 	private static final String ALL_ELEVEN_LIGHTS_OFF = "OOOOOOOOOOO";
-	private static StringBuilder sb = new StringBuilder();
 
 	@Override
-	public String getLamps(int minutes) {
-
-		int minutesDividedBy5 = minutes / 5;
-		int minutesModulus5 = minutes % 5;
-
-		sb.setLength(0);
-		return sb.append(getLampsForMinutesMultiplesOfFive(minutesDividedBy5))
-					.append(System.lineSeparator())
-					.append(getLampsForSingleMinutes(minutesModulus5)).toString();
-	}
-
-	private String getLampsForMinutesMultiplesOfFive(int minutes) {
+	public String getLampsForMultiplesOfFive(int minutes) {
 
 		StringBuilder lamps = new StringBuilder(ALL_ELEVEN_LIGHTS_OFF);
 
@@ -33,7 +21,8 @@ public class Minute implements TimeUnit {
 		return lamps.toString();
 	}
 
-	private String getLampsForSingleMinutes(int minutes) {
+	@Override
+	public String getLampsForSingleUnits(int minutes) {
 
 		StringBuilder lamps = new StringBuilder(ALL_FOUR_LIGHTS_OFF);
 

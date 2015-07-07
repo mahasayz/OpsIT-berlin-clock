@@ -48,10 +48,13 @@ public class BerlinClock implements TimeConverter{
 		String hour = aTime.substring(0, aTime.indexOf(":"));
 		
 		timeSB.append(new Second().getLamps(cal.get(Calendar.SECOND))).append(System.lineSeparator());
+		
+		// A check on hour portion in relation to above ambiguity
 		if (hour.equals("24"))
 			timeSB.append(new Hour().getLamps(24)).append(System.lineSeparator());
 		else
 			timeSB.append(new Hour().getLamps(cal.get(Calendar.HOUR_OF_DAY))).append(System.lineSeparator());
+		
 		timeSB.append(new Minute().getLamps(cal.get(Calendar.MINUTE)));
 		
 		return timeSB.toString();

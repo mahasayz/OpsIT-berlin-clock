@@ -1,35 +1,26 @@
 package com.ubs.opsit.interviews;
 
-public class Hour implements TimeUnit {
+public class Hour extends TimeUnit {
 	private static final String ALL_LIGHTS_OFF = "OOOO";
 	private static final String RED_LIGHT = "R";
-	private static final int MULTIPLE_OF_FIVE = 5;
-	private static StringBuilder sb = new StringBuilder();
 
 	@Override
-	public String getLamps(int hrs) {
-
-		sb.setLength(0);
-		return sb.append(getLampsForHoursMultiplesOfFive(hrs))
-				.append(System.lineSeparator())
-				.append(getLampsForSingleHours(hrs)).toString();
-	}
-
-	public String getLampsForHoursMultiplesOfFive(int hours) {
+	public String getLampsForMultiplesOfFive(int hours) {
 
 		StringBuilder lamps = new StringBuilder(ALL_LIGHTS_OFF);
 
-		for (int i = 0; i < (hours / MULTIPLE_OF_FIVE); i++) {
+		for (int i = 0; i < hours; i++) {
 			lamps.replace(i, i + 1, RED_LIGHT);
 		}
 		return lamps.toString();
 	}
 
-	public String getLampsForSingleHours(int hours) {
+	@Override
+	public String getLampsForSingleUnits(int hours) {
 
 		StringBuilder lamps = new StringBuilder(ALL_LIGHTS_OFF);
 
-		for (int i = 0; i < (hours % MULTIPLE_OF_FIVE); i++) {  //dont do calculaion ever loop, do outside loop
+		for (int i = 0; i < hours; i++) {
 			lamps.replace(i, i + 1, RED_LIGHT);
 		}
 		return lamps.toString();

@@ -1,15 +1,25 @@
 package com.ubs.opsit.interviews;
 
-public class Second implements TimeUnit {
+public class Second extends TimeUnit {
 
-    @Override
-    public String getLamps(int seconds) {
+	@Override
+	public String getLamps(int seconds) {
+		if (0 == seconds % 2) {
+			return "Y";
+		}
+		return "O";
+	}
 
-        if (0 == seconds%2) {
-            return "Y";
-        }
+	@Override
+	public String getLampsForMultiplesOfFive(int unit) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-        return "O";
-    }
-    
+	@Override
+	public String getLampsForSingleUnits(int unit) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
